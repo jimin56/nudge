@@ -1,5 +1,14 @@
 {
-  "open": {},
+  "open": {
+    "m3|2026-12-05|19:50": {
+      "src": "m3",
+      "label": "메이플 헌티드 맨션",
+      "date": "2026-12-05",
+      "time": "19:50",
+      "info": "1석",
+      "click": "https://ticket.yes24.com/Perf/60080"
+    }
+  },
   "fails": 0,
   "fail_notified": false,
   "maxdate": {
