@@ -38,6 +38,10 @@ TZ = zoneinfo.ZoneInfo(os.environ.get("TZ_NAME", "Asia/Seoul"))
 WD = "월화수목금토일"
 FAIL_ALERT_AFTER = 15
 REQUEST_GAP = 0.4
+# Sources to leave out of every pass (scan, notify, open-watch, status).
+# m3 = 메이플 헌티드 맨션
+SKIP_SOURCE_IDS = {"m3"}
+SKIP_SOURCE_NAMES = ("헌티드",)
 
 
 def setup_log():
@@ -283,8 +287,11 @@ def notify_new(cfg, new):
 # ---------- main ----------
 
 def sources_of(cfg):
+    """Configured sources, minus the ones skipped for good (see SKIP_SOURCE_IDS)."""
     defaults = cfg.get("type_defaults", {})
-    return [{**defaults.get(s["type"], {}), **s} for s in cfg["sources"]]
+    return [{**defaults.get(s["type"], {}), **s} for s in cfg["sources"]
+            if s.get("id") not in SKIP_SOURCE_IDS
+            and not any(w in s.get("name", "") for w in SKIP_SOURCE_NAMES)]
 
 
 def run(cfg, today=None, notify=True, force_heavy=False):
