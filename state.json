@@ -1,6 +1,15 @@
 {
-  "open": {},
-  "fails": 1,
+  "open": {
+    "m5|2026-12-06|18:50": {
+      "src": "m5",
+      "label": "메이플 루디브리엄",
+      "date": "2026-12-06",
+      "time": "18:50",
+      "info": "1석",
+      "click": "https://ticket.yes24.com/Perf/60082"
+    }
+  },
+  "fails": 0,
   "fail_notified": false,
   "maxdate": {
     "m1": "2026-12-06",
