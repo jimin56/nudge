@@ -9,7 +9,7 @@
       "click": "https://ticket.yes24.com/Perf/60082"
     }
   },
-  "fails": 1,
+  "fails": 0,
   "fail_notified": false,
   "maxdate": {
     "m1": "2026-12-06",
